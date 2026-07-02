@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="footer-brand">
               <Link to="/" className="footer-logo">
                 <img src="/logo.png" alt="Prime Pillar" className="footer-logo-img" />
-                <span>Prime Pillar Engineering</span>
+                <span>Prime Pillar Engineering System</span>
               </Link>
             <p>
               Your trusted partner in security solutions, alarm monitoring,
@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Prime Pillar Engineering Ltd. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Prime Pillar Engineering System Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>

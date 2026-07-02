@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
           <img src="/logo.png" alt="Prime Pillar" className="logo-img" />
-          <span>Prime Pillar Engineering</span>
+          <span>Prime Pillar Engineering System</span>
         </Link>
 
         <div className={`navbar-links ${isOpen ? 'active' : ''}`}>

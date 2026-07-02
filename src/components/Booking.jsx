@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaCalendarAlt, FaClock, FaCheck, FaSpinner, FaExclamationTriangle } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaCalendarAlt, FaClock, FaCheck } from 'react-icons/fa';
 import '../styles/Booking.css';
 
 const serviceOptions = [
@@ -30,35 +30,14 @@ const Booking = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError('');
-
-    try {
-      const res = await fetch('/api/booking', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-
-      if (!data.success) throw new Error(data.error || 'Something went wrong');
-
-      setSubmitted(true);
-    } catch (err) {
-      setError('Failed to send booking request. Please try calling us directly.');
-    } finally {
-      setLoading(false);
-    }
+    setSubmitted(true);
   };
 
   const callNumber = '+250783888852';
@@ -165,15 +144,8 @@ const Booking = () => {
                   ></textarea>
                 </div>
 
-                {error && (
-                  <div className="form-error">
-                    <FaExclamationTriangle />
-                    <span>{error}</span>
-                  </div>
-                )}
-
-                <button type="submit" className="submit-btn" disabled={loading}>
-                  {loading ? <><FaSpinner className="spinner" /> Sending...</> : 'Submit Booking Request'}
+                <button type="submit" className="submit-btn">
+                  Submit Booking Request
                 </button>
               </form>
             ) : (
@@ -181,9 +153,9 @@ const Booking = () => {
                 <div className="success-icon">
                   <FaCheck />
                 </div>
-                <h3>Booking Request Sent!</h3>
-                <p>Thank you, <strong>{formData.name}</strong>. Your request for <strong>{formData.service}</strong> has been sent to our team.</p>
-                <p className="success-note">We will contact you at <strong>{formData.phone}</strong> or <strong>{formData.email}</strong> to confirm.</p>
+                <h3>Booking Request Received!</h3>
+                <p>Thank you, <strong>{formData.name}</strong>. Your request for <strong>{formData.service}</strong> has been received.</p>
+                <p className="success-note">Please call us at <strong>+250 783 888 852</strong> or use the contact methods below to confirm your booking.</p>
                 <div className="success-actions">
                   <a href={`tel:${callNumber}`} className="btn-call">
                     <FaPhone /> Call Us Now

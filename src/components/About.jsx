@@ -7,7 +7,7 @@ const About = () => {
       <div className="about-container">
         <div className="about-left">
           <span className="section-tag">About Us</span>
-          <h2>Prime Pillar Engineering Ltd</h2>
+          <h2>Prime Pillar Engineering System Ltd</h2>
           <p>
             We are a Rwandan company dedicated to providing top-tier security solutions,
             fire safety systems, electrical installations, and electronics maintenance services.
