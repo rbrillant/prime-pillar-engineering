@@ -10,6 +10,7 @@ const services = [
     description:
       'Professional monitoring and remote monitoring of electronic security alarm systems including burglar and fire alarms, with full maintenance support.',
     features: ['24/7 Remote Monitoring', 'Burglar Alarm Systems', 'Fire Alarm Systems', 'Full Maintenance'],
+    image: '/images/services/security-alarm.jpg',
   },
   {
     icon: <FaTools />,
@@ -18,6 +19,7 @@ const services = [
     description:
       'Expert repair and maintenance of consumer electronics including televisions, radio receivers, video cassette recorders, CD players, and household video cameras.',
     features: ['TV Repair', 'Radio & VCR Repair', 'CD Player Service', 'Video Camera Repair'],
+    image: '/images/services/electronics-repair.jpg',
   },
   {
     icon: <FaLock />,
@@ -26,6 +28,7 @@ const services = [
     description:
       'Professional installing, repairing, rebuilding, and adjusting of mechanical or electronic locking devices, safes, and security vaults.',
     features: ['Electronic Locks', 'Safe Installation', 'Vault Security', 'Lock Repair'],
+    image: '/images/services/locks.jpg',
   },
   {
     icon: <FaUserShield />,
@@ -34,6 +37,7 @@ const services = [
     description:
       'Expert security consulting services to assess, plan, and implement comprehensive security solutions tailored to your needs.',
     features: ['Risk Assessment', 'Security Planning', 'System Design', 'Compliance Advisory'],
+    image: '/images/services/consulting.jpg',
   },
   {
     icon: <FaFire />,
@@ -42,6 +46,7 @@ const services = [
     description:
       'Design, installation, and maintenance of complete fire alarm systems for residential and commercial properties.',
     features: ['Smoke Detectors', 'Heat Detectors', 'Control Panels', 'Emergency Alarms'],
+    image: '/images/services/fire-alarm.jpg',
   },
   {
     icon: <FaBolt />,
@@ -50,6 +55,7 @@ const services = [
     description:
       'Professional electrical installation services for homes, offices, and industrial facilities. Safe and code-compliant work.',
     features: ['Wiring Installation', 'Panel Upgrades', 'Lighting Setup', 'Safety Inspections'],
+    image: '/images/services/electrical.jpg',
   },
   {
     icon: <FaBell />,
@@ -58,6 +64,7 @@ const services = [
     description:
       'State-of-the-art intruder alarm systems for comprehensive security against unauthorized entry and break-ins.',
     features: ['Motion Sensors', 'Door/Window Sensors', 'Siren Alarms', 'Remote Monitoring'],
+    image: '/images/services/intruder-alarm.jpg',
   },
   {
     icon: <FaIdCard />,
@@ -66,6 +73,7 @@ const services = [
     description:
       'Advanced access control solutions including biometric, card-based, and keypad entry systems for secure premises.',
     features: ['Biometric Readers', 'Key Card Systems', 'Intercom Entry', 'Remote Management'],
+    image: '/images/services/access-control.jpg',
   },
   {
     icon: <FaCamera />,
@@ -74,6 +82,7 @@ const services = [
     description:
       'Professional CCTV system installation with high-definition cameras for comprehensive video surveillance coverage.',
     features: ['HD Cameras', 'Night Vision', 'Remote Viewing', 'DVR/NVR Setup'],
+    image: '/images/services/cctv.jpg',
   },
   {
     icon: <FaFireExtinguisher />,
@@ -82,6 +91,7 @@ const services = [
     description:
       'Supply, installation, and maintenance of fire fighting equipment to ensure safety and regulatory compliance.',
     features: ['Fire Extinguishers', 'Fire Hose Reels', 'Sprinkler Systems', 'Fire Blankets'],
+    image: '/images/services/fire-fighting.jpg',
   },
   {
     icon: <FaSearch />,
@@ -90,6 +100,7 @@ const services = [
     description:
       'Installation and maintenance of security screening equipment for checkpoints including metal detectors and X-ray scanners.',
     features: ['Metal Detectors', 'X-Ray Scanners', 'Walk-Through Gates', 'Handheld Scanners'],
+    image: '/images/services/screening.jpg',
   },
   {
     icon: <FaMapMarkerAlt />,
@@ -98,6 +109,7 @@ const services = [
     description:
       'GPS tracking and positioning solutions for vehicle tracking, asset management, and personal security applications.',
     features: ['Vehicle Tracking', 'Real-Time Monitoring', 'Geo-Fencing', 'Asset Tracking'],
+    image: '/images/services/gps.jpg',
   },
   {
     icon: <FaWrench />,
@@ -106,6 +118,7 @@ const services = [
     description:
       'Comprehensive maintenance services for all security systems and electronic equipment to ensure optimal performance.',
     features: ['Scheduled Maintenance', 'Emergency Repairs', 'System Upgrades', 'Performance Checks'],
+    image: '/images/services/maintenance.jpg',
   },
 ];
 
@@ -124,18 +137,25 @@ const Services = () => {
         <div className="services-grid">
           {services.map((service, index) => (
             <div className="service-card" key={index}>
-              <div className="service-icon">{service.icon}</div>
-              <div className="service-code">{service.code}</div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <div className="service-features">
-                {service.features.map((feature, i) => (
-                  <span key={i}>{feature}</span>
-                ))}
+              <div className="service-image-wrap">
+                <img src={service.image} alt={service.title} className="service-image" />
+                <div className="service-icon-overlay">
+                  <div className="service-icon">{service.icon}</div>
+                </div>
               </div>
-              <button className="service-btn" onClick={() => navigate('/booking')}>
-                Book This Service
-              </button>
+              <div className="service-body">
+                <div className="service-code">{service.code}</div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <div className="service-features">
+                  {service.features.map((feature, i) => (
+                    <span key={i}>{feature}</span>
+                  ))}
+                </div>
+                <button className="service-btn" onClick={() => navigate('/booking')}>
+                  Book This Service
+                </button>
+              </div>
             </div>
           ))}
         </div>
