@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://prime-pillar-engineering.vercel.app/sitemap.xml
+Sitemap: https://primepillarengineering.com/sitemap.xml
