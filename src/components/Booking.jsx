@@ -41,7 +41,7 @@ const Booking = () => {
   };
 
   const callNumber = '+250783888852';
-  const emailAddress = 'ruchambo@gmail.com';
+  const emailAddress = 'info@primepillarengineering.com';
   const whatsappLink = `https://wa.me/250783888852?text=Hello%2C%20I%20would%20like%20to%20book%20a%20service%20from%20Prime%20Pillar%20Engineering.`;
 
   return (

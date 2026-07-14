@@ -43,7 +43,7 @@ Additional Details:
 
     await transporter.sendMail({
       from: `"Prime Pillar Booking" <${process.env.SMTP_USER}>`,
-      to: 'ruchambo@gmail.com',
+      to: 'info@primepillarengineering.com',
       subject: `New Booking: ${service} - ${name}`,
       text: emailBody,
     });

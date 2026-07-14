@@ -54,7 +54,7 @@ const About = () => {
               <FaEnvelope className="info-icon" />
               <div>
                 <span className="info-label">Email</span>
-                <p>ruchambo@gmail.com</p>
+                <p>info@primepillarengineering.com</p>
               </div>
             </div>
 

@@ -21,7 +21,7 @@ const Footer = () => {
               <a href="https://wa.me/250783888852" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp />
               </a>
-              <a href="mailto:ruchambo@gmail.com">
+              <a href="mailto:info@primepillarengineering.com">
                 <FaEnvelope />
               </a>
               <a href={`tel:+250783888852`}>
@@ -56,7 +56,7 @@ const Footer = () => {
             </div>
             <div className="footer-contact-row">
               <FaEnvelope />
-              <a href="mailto:ruchambo@gmail.com">ruchambo@gmail.com</a>
+              <a href="mailto:info@primepillarengineering.com">info@primepillarengineering.com</a>
             </div>
             <div className="footer-contact-row">
               <FaMapMarkerAlt />
